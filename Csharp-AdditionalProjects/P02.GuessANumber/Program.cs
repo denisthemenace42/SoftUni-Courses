@@ -20,7 +20,9 @@ namespace P02.GuessANumber
                     if (health <= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("You lost!");
+                        Console.Write("You lost! ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"The correct number is: {randomNumber}");
                         return; 
                     }
                     string playerInput = Console.ReadLine();
@@ -73,7 +75,9 @@ namespace P02.GuessANumber
                     if (health <= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("You lost!");
+                        Console.Write("You lost! ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"The correct number is: {randomNumber}");
                         return;
                     }
                     string playerInput = Console.ReadLine();
@@ -102,7 +106,7 @@ namespace P02.GuessANumber
                             Console.WriteLine("");
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Congratulations, you passed level 2! You guessed the number!");
-                            Console.WriteLine("For passing this level you receive 10 health points! Keep going!");
+                            Console.WriteLine("For passing this level you receive 6 health points! Keep going!");
                             health += 6;
                             Console.WriteLine($"Your current health is {health}.");
                             Console.WriteLine("");
@@ -113,9 +117,9 @@ namespace P02.GuessANumber
                     {
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Invalid input");
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Level 2. Guess a number ( 1-500 ): ");
-                }
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("Level 2. Guess a number ( 1-500 ): ");
+                     }
 
                 }
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -123,9 +127,12 @@ namespace P02.GuessANumber
                 int randomNumber3 = random.Next(1, 1001);
                 while (true)
                 {
+                    if (health <= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("You lost!");
+                        Console.Write("You lost! ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"The correct number is: {randomNumber}");
                         return;
                     }
                     string playerInput = Console.ReadLine();
@@ -154,7 +161,7 @@ namespace P02.GuessANumber
                             Console.WriteLine("");
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Congratulations, you passed level 3! You guessed the number!");
-                            Console.WriteLine("For passing this level you receive 10 health points! Keep going!");
+                            Console.WriteLine("For passing this level you receive 6 health points! Keep going!");
                             health += 6;
                             Console.WriteLine($"Your current health is {health}.");
                             Console.WriteLine("");
@@ -174,9 +181,12 @@ namespace P02.GuessANumber
                 int randomNumber4 = random.Next(1, 10001);
                 while (true)
                 {
+                    if (health <= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("You lost!");
+                        Console.Write("You lost! ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"The correct number is: {randomNumber}");
                         return;
                     }
                     string playerInput = Console.ReadLine();
