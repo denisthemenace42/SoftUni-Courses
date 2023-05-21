@@ -9,9 +9,11 @@ namespace P01.RockPapperScissors
             const string Scissors = "scissors";
             const string Paper = "paper";
             const string Rock = "rock";
-
+            int computerScore = 0;
+            int yourScore = 0;
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Choose between [r]ock, [p]aper or [s]cissors: ");
                 string playerMove = Console.ReadLine();
                 playerMove = playerMove.ToLower();
@@ -36,6 +38,7 @@ namespace P01.RockPapperScissors
                 Random random = new Random();
                 int computerRandomNumber = random.Next(1, 4);
                 string computerMove = "";
+                
                 switch (computerRandomNumber)
                 {
                     case 1:
@@ -52,30 +55,38 @@ namespace P01.RockPapperScissors
                    (playerMove == Scissors && computerMove == Paper) ||
                    (playerMove == Paper && computerMove == Rock))
                 {
+                    yourScore += 1;
                     Console.WriteLine($"YOU: {playerMove}");
                     Console.WriteLine($"COMPUTER: {computerMove}");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("You are the winner!");
                 }
                 else if ((playerMove == Paper && computerMove == Scissors) ||
                           (playerMove == Scissors && computerMove == Rock) ||
                             (playerMove == Rock && computerMove == Paper))
                 {
+                    computerScore += 1;
                     Console.WriteLine($"YOU: {playerMove}");
                     Console.WriteLine($"COMPUTER: {computerMove}");
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("You lose.");
                 }
                 else
                 {
                     Console.WriteLine($"YOU: {playerMove}");
                     Console.WriteLine($"COMPUTER: {computerMove}");
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("This game was draw.");
                 }
-
-                Console.WriteLine("Do you wanna play again? Yes/No");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("----------SCOREBOARD-----------");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"YOUR SCORE: {yourScore} COMPUTER SCORE: {computerScore}");
+                Console.WriteLine("Do you wanna play again? Y/N");
                 string again = string.Empty;
-                while ((again=Console.ReadLine()) != "Yes" || again != "yes")
+                while ((again=Console.ReadLine()) != "Y" && again != "y")
                 {
-                    if (again == "No" || again == "no")
+                    if (again == "N" || again == "n")
                     {
                         return;
                     }
