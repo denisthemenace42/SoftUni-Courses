@@ -1,16 +1,11 @@
 ﻿string input = Console.ReadLine();
 
-MiddleCharacters(input);
+Console.WriteLine(MiddleCharacters(input));
 
-void  MiddleCharacters(string input){
-if (input.Length % 2 == 0){
-    char[] arr = input.ToCharArray();
-    int mid = arr[arr.Length/2];
-    Console.WriteLine($"{arr[mid]} {arr[mid+1]}");
-}
-else{
-    char[] arr = input.ToCharArray();
-    int mid = arr[arr.Length/2];
-    Console.WriteLine($"{arr[mid]}");
-}
+static string MiddleCharacters(string input){
+
+int l = 1 - input.Length % 2;
+
+return input.Substring(input.Length / 2 - l , 1 + l);
+
 }
