@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿List<int> numbers = Console.ReadLine()
+.Split(" ",StringSplitOptions.RemoveEmptyEntries)
+.Select(int.Parse)
+.ToList();
+
+List<int> largestThreeNumbers = numbers.OrderByDescending(x => x)
+.Take(3)
+.ToList();
+
+Console.WriteLine(String.Join(" ", largestThreeNumbers));
